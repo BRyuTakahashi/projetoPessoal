@@ -1,0 +1,53 @@
+@font-face {
+    font-family: "ZenKurenaido";
+    src: url("./ZenKurenaido-Regular.ttf") format("truetype");
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    background-color: #fcfcfc;
+    font-family: ZenKurenaido;
+}
+
+header {
+
+    padding: 30px;
+    border-bottom: 1px solid #000000;
+    ;
+}
+
+.container {
+
+    margin: 0 auto;
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+ul {
+
+    width: 350px;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+}
+
+li {
+
+    font-size: 20px;
+}
+
+.banner {
+
+    background-image: url("/assets/img/banner2.jpg");
+    padding: 100px 0;
+}
+
+.banner .container{
+
+    height: 350px;
+    align-items: center;
+    justify-content: center;;
+}
