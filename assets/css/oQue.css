@@ -1,0 +1,21 @@
+.conteudo{
+    
+    /* margin: 0 10px; */
+}
+
+.conteudo .container{
+
+    display: block;
+    width: 800px;
+    
+}
+
+.container h2{
+
+    font-size: 30px;
+}
+
+.container p{
+
+    margin: 20px 0 20px 0;
+}
