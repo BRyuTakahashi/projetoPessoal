@@ -47,6 +47,33 @@ li {
     font-size: 20px;
 }
 
+li a{
+
+    color: black;
+    font-weight: 300;
+    text-decoration: none;
+    transition: .2s linear;
+}
+
+li a:hover{
+
+    color: #0080ff;
+    /* font-weight: 500; */
+}
+
+.bar{
+    width: 0;
+    height: 3px;
+    margin: 1px auto;
+    margin-top: 10px;
+    transition: all .3s ease;
+}
+
+a:hover .bar{
+    background-color: #0080ff;
+    width: 60%;
+}
+
 .banner {
 
     background-image: url("../img/banner2_2.png");
