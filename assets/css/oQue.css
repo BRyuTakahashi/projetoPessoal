@@ -1,9 +1,14 @@
 .conteudo .container{
 
     margin: 0 50px;
-    display: block;
-    width: 800px;
-    align-items: flex-start;    
+    display: flex;
+    /* width: 500px; */
+}
+
+.texto{
+
+    flex-direction: column;
+    width: 600px;
 }
 
 .container h2{
