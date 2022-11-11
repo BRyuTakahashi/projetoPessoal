@@ -1,13 +1,9 @@
-.conteudo{
-    
-    /* margin: 0 10px; */
-}
-
 .conteudo .container{
 
+    margin: 0 50px;
     display: block;
     width: 800px;
-    
+    align-items: flex-start;    
 }
 
 .container h2{
