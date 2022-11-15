@@ -94,12 +94,11 @@ a:hover .bar{
     justify-content: center;
 }
 
-.banner p{
+.banner h1{
 
     width: 500%;
     color: #FFFFFF;
-    /* font-size: 50px; */
-    font-size: 250%;
+    /* font-size: 24px; */
     text-align: center;
     font-weight: bold;
 }
@@ -108,7 +107,7 @@ a:hover .bar{
 
     margin: 20px;
     background-color: #FFFFFF;
-    padding: 100px 0;
+    padding: 60px 0;
 }
 
 /* .conteudo .container{

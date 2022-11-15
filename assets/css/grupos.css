@@ -1,0 +1,43 @@
+.banner{
+
+    background-image: url("../img/gruposBanner.png");
+    color: white;
+    text-align: center;
+    font-size: 24px;
+}
+
+.conteudo h1{
+
+    display: flex;
+    justify-content: center;
+    margin-bottom: 100px;
+    /* margin-left: 200px; */
+}
+
+.conteudo .container{
+
+    margin-bottom: 50px;
+}
+
+.texto{
+
+    flex-direction: column;
+    width: 700px;
+    margin-right: 100px;
+}
+
+.texto h2{
+
+    font-size: 30px;
+}
+
+.texto p{
+
+    margin: 20px 0;
+    font-size: 18px;
+}
+
+.grupoLogo{
+
+    width: 250px;
+}
