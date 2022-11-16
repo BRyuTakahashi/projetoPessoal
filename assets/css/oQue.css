@@ -10,22 +10,24 @@
 .texto{
 
     flex-direction: column;
-    width: 700px;
+    /* width: 700px; */
+    width: 40%;
     margin-right: 100px;
 }
 
 .texto h2{
 
-    font-size: 36px;
+    font-size: 3vw;
+    margin-bottom: 10%;
 }
 
 .texto p{
 
-    margin: 20px 0;
-    font-size: 18px;
+    margin: 3% 0;
+    font-size: 1.3vw;
 }
 
 .oQue{
 
-    width: 800px;
+    width: 50%;
 }
