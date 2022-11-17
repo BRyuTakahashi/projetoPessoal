@@ -36,7 +36,8 @@ header {
 
 ul {
 
-    width: 550px;
+    /* width: 400px; */
+    width: 40%;
     display: flex;
     /* align-items: center; */
     justify-content: space-between;
@@ -122,16 +123,17 @@ a:hover .bar{
 
 .texto h2{
 
-    font-size: 36px;
+    font-size: 3vw;
+    margin-bottom: 10%;
 }
 
 .texto p{
 
-    margin: 20px 0;
+    margin: 3% 0;
     font-size: 1.3vw;
 }
 
-.quemSomos{
+.oQue{
 
     width: 50%;
 }
