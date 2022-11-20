@@ -1,0 +1,33 @@
+/* .conteudo .container{
+
+    margin: 0 50px; 
+    display: flex; 
+    width: 500px;
+    justify-content: space-between;
+    border: 1px solid #000000;
+} */
+
+.texto{
+
+    flex-direction: column;
+    /* width: 700px; */
+    width: 40%;
+    margin-right: 100px;
+}
+
+.texto h2{
+
+    font-size: 3vw;
+    margin-bottom: 10%;
+}
+
+.texto p{
+
+    margin: 3% 0;
+    font-size: 1.3vw;
+}
+
+.oQue{
+
+    width: 50%;
+}

@@ -1,0 +1,156 @@
+@font-face {
+    font-family: "ZenKurenaido";
+    src: url("./ZenKurenaido-Regular.ttf") format("truetype");
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: ZenKurenaido;
+}
+
+body{
+    background-color: #ebebeb;
+
+}
+
+header {
+    background-color: #FFFFFF;
+    padding: 1%;
+    border-bottom: 1px solid #bcbcbc;
+}
+
+.container {
+
+    margin: 0 auto;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* .logo{
+
+    width: 70%;
+} */
+
+ul {
+
+    /* width: 400px; */
+    width: 40%;
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-between;
+    list-style: none;
+}
+
+li {
+
+    font-size: 18px;
+}
+
+li a{
+
+    color: black;
+    font-weight: 300;
+    text-decoration: none;
+    transition: .2s linear;
+}
+
+li a:hover{
+
+    color: #0080ff;
+    /* font-weight: 500; */
+}
+
+li img{
+
+    width: 25px;
+}
+
+.bar{
+    width: 0;
+    height: 3px;
+    margin: 1px auto;
+    margin-top: 10px;
+    transition: all .3s ease;
+}
+
+a:hover .bar{
+    background-color: #0080ff;
+    width: 60%;
+}
+
+.banner {
+
+    background-image: url("../img/banner2_2.png");
+    width: 100%;
+    /* position:; */
+    padding: 50px 0;
+    margin-top: 20px;
+}
+
+.banner .container{
+
+    height: 400px;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner h1{
+
+    width: 500%;
+    color: #FFFFFF;
+    text-align: center;
+    font-weight: bold;
+    font-size: 2vw;
+}
+
+.conteudo{
+
+    margin: 20px;
+    background-color: #FFFFFF;
+    padding: 60px 0;
+}
+
+.texto{
+
+    flex-direction: column;
+    /* width: 700px; */
+    width: 40%;
+    margin-right: 100px;
+}
+
+.texto h2{
+
+    font-size: 1.8vw;
+    margin-bottom: 10%;
+}
+
+.texto p{
+
+    margin: 3% 0;
+    font-size: 1.1vw;
+}
+
+.oQue{
+
+    width: 50%;
+}
+
+/* .conteudo .container{
+
+    padding: 0;
+} */
+
+footer{
+    padding: 50px 0;
+    background-color: black;
+    color: #fcfcfc;
+}
+
+footer .container{
+
+    align-items: center;
+    justify-content: center;
+}

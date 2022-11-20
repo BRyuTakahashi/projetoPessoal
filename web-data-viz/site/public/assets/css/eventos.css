@@ -1,0 +1,36 @@
+.conteudo h1{
+
+    font-size: 2vw;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 100px;
+    /* margin-left: 200px; */
+}
+
+.conteudo .container{
+
+    margin-bottom: 50px;
+}
+
+.texto{
+
+    flex-direction: column;
+    width: 700px;
+    margin-right: 100px;
+}
+
+.texto h2{
+
+    font-size: 1.7vw;
+}
+
+.texto p{
+
+    margin: 20px 0;
+    font-size: 1.1vw;
+}
+
+.grupoLogo{
+
+    width: 300px;
+}
