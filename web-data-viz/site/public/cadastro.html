@@ -51,6 +51,17 @@
                         
                         <div class="campo">
                             
+                            <label for="grupo">Grupo:</label>
+                            <select id="sel_grupo">
+                                <option value="0">Nenhum</option>
+                                <option value="1">Ishin</option>
+                                <option value="2">Kitsume</option>
+                                <option value="3">Shinsei</option>
+                            </select>
+                        </div>
+
+                        <div class="campo">
+                            
                             <label for="password">Senha:</label>
                             <input type="password" id="ipt_senha" placeholder="*********">
                         </div>
@@ -81,6 +92,7 @@
     var nomeVar = ipt_nome.value;
     var apelidoVar = ipt_apelido.value;
     var emailVar = ipt_email.value;
+    var grupoVar = sel_grupo.value;
     var senhaVar = ipt_senha.value;
     var senha2Var = ipt_senha2.value;
 
@@ -107,6 +119,7 @@
             nomeServer: nomeVar,
             apelidoServer: apelidoVar,
             emailServer: emailVar,
+            grupoServer: grupoVar,
             senhaServer: senhaVar
         })
     }).then(function (resposta) {
@@ -114,12 +127,12 @@
         console.log("resposta: ", resposta);
 
         if (resposta.ok) {
-            cardErro.style.display = "block";
+            // cardErro.style.display = "block";
 
             mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
 
             setTimeout(() => {
-                window.location = "login.html";
+                window.location = "./login.html";
             }, "2000")
             
             limparFormulario();

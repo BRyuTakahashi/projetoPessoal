@@ -76,7 +76,7 @@ header{
     margin: 15px 0px 3px 0;
 }
 
-.campo input{
+.campo input, select{
     padding: 10px 30px;
     border-radius: 10px;
     border: 1px solid #000000;
