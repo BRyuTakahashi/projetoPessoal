@@ -30,6 +30,9 @@ FOREIGN KEY (fkGrupo) REFERENCES grupo (idGrupo)
 SELECT * FROM usuario;
 SELECT * FROM grupo;
 
+SELECT * FROM usuario
+	JOIN grupo ON fkGrupo = idGrupo;
+
 DESC usuario;
 
 SHOW TABLES;
