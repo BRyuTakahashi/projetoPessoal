@@ -22,12 +22,17 @@ apelido VARCHAR(45),
 email VARCHAR(45) CONSTRAINT chkEmail CHECK (email LIKE ('%@%')),
 senha VARCHAR(45),
 fkGrupo INT,
-fkPlacar INT DEFAULT 0,
-FOREIGN KEY (fkGrupo) REFERENCES grupo (idGrupo),
-FOREIGN KEY (fkPlacar) REFERENCES placar (idPlacar)
+-- fkPlacar INT DEFAULT 0,
+FOREIGN KEY (fkGrupo) REFERENCES grupo (idGrupo)
+-- FOREIGN KEY (fkPlacar) REFERENCES placar (idPlacar)
 );
 
 SELECT * FROM usuario;
+SELECT * FROM grupo;
+
+DESC usuario;
+
+SHOW TABLES;
 
 INSERT INTO grupo VALUES
 	(0, 'Nenhum Grupo', null),

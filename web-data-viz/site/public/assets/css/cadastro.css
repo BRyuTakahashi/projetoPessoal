@@ -49,7 +49,7 @@ header{
 
 .caixa-formulario h2{
 
-    font-size: 1.8vw;
+    font-size: 1.6vw;
     font-weight: 500;
     width: 1000px;
     margin-bottom: 30px;
@@ -72,42 +72,53 @@ header{
 
 .campo label{
     color: #000000;
-    font-size: 1.5vw;
+    font-size: 1.2vw;
     margin: 15px 0px 3px 0;
 }
 
 .campo input, select{
     padding: 10px 30px;
+    /* margin-left: 10px; */
     border-radius: 10px;
     border: 1px solid #000000;
     color: black;
     font-size: 1vw;
 }
 
-.caixa-formulario a{
+select option{
+    
+    font-size: 1vw;
+    font-weight: normal;
+}
 
+.caixa-formulario a{
+    
     color: black;
     font-weight: 300;
     transition: .2s linear;
 }
 
 .caixa-formulario a:hover{
-
-    color: blue;
+    
+    color:#0080ff;
 }
 
 .caixa-formulario button{
     margin-top: 40px;
-    width: 120px;
-    color: #ffffff;
-    background-color: #e6005a;
-    padding: 10px 20px;
+    width: 180px;
+    color: #000000;
+    background-color: #ffffff;
+    font-size: 1vw;
+    padding: 10px 30px;
     font-weight: bold;
-    border: none;
+    border: 1px solid #000000;
     border-radius: 5px;
     cursor: pointer;
+    transition: .2s linear;
 }
 
 .caixa-formulario button:hover{
-    opacity: 0.8;
+    background-color: #0080ff;
+    color: #FFFFFF;
+    border: 1px solid #0080ff;
 }
