@@ -6,12 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/quiz.css">
     <title>Yosakoi Brasil</title>
 </head>
 
 <body>
 
-    <header>
+    <!-- <header>
         <div class="container">
             <h1><a href="index.html"><img src="./assets/img/yosakoiBrasil_logo.png" alt="Logo Yosakoi Brasil" class="logo"></a></h1>
             
@@ -19,17 +20,21 @@
                 <li><a href="index.html">Home<br><div class="bar"></div></a></li>
                 <li><a href="grupos.html">Grupos<br><div class="bar"></div></a></li>
                 <li><a href="eventos.html">Eventos<br><div class="bar"></div></a></li>
-                <li><a href="sugestoes.html">Sugestões<br><div class="bar"></div></a></li>
+                <li><a href="quiz.html">Quiz<br><div class="bar"></div></a></li>
                 <li>|</li>
                 <li><a href="login.html"><img src="./assets/img/login_icon.png" alt="icone_login"><br><div class="bar"></div></a></li>
             </ul>
         </div>
-    </header>
+    </header> -->
 
     <div class="conteudo">
         <div class="container">
+            <div class="main">
+                <h1>Olá <span id="span_usuario"></span>, seja bem vindo</h1>
+                <h2>Teste seus conhecimentos sobre a cultura japonesa</h2>
 
-            <h2>AAAAAAAAAAAAAA</h2>
+                <button onclick="iniciar()">Iniciar Quiz</button>
+            </div>
         </div>
     </div>
 
@@ -41,3 +46,14 @@
 </body>
 
 </html>
+
+<script>
+
+    span_usuario.innerHTML = sessionStorage.APELIDO_USUARIO;
+
+    function iniciar(){
+
+        // setTimeout
+        window.location = "./perguntas.html"
+    }
+</script>
