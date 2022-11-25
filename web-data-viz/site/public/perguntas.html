@@ -12,20 +12,20 @@
 
 <body>
 
-    <!-- <header>
+    <header>
         <div class="container">
             <h1><a href="index.html"><img src="./assets/img/yosakoiBrasil_logo.png" alt="Logo Yosakoi Brasil" class="logo"></a></h1>
             
-            <ul>
+            <!-- <ul>
                 <li><a href="index.html">Home<br><div class="bar"></div></a></li>
                 <li><a href="grupos.html">Grupos<br><div class="bar"></div></a></li>
                 <li><a href="eventos.html">Eventos<br><div class="bar"></div></a></li>
                 <li><a href="quiz.html">Quiz<br><div class="bar"></div></a></li>
                 <li>|</li>
                 <li><a href="login.html"><img src="./assets/img/login_icon.png" alt="icone_login"><br><div class="bar"></div></a></li>
-            </ul>
+            </ul> -->
         </div>
-    </header> -->
+    </header>
 
     <div class="conteudo">
         <div class="container">
@@ -35,17 +35,17 @@
                 <h1>Em que ano foi a primeira Copa do Mundo que o Japão Participou?</h1>
                 <select id="sel_copa">
                     <option value="0">- escolha um ano -</option>
+                    <option value="0">1990</option>
+                    <option value="0">1994</option>
                     <option value="1">1998</option>
                     <option value="0">2002</option>
                     <option value="0">2006</option>
-                    <option value="0">2010</option>
-                    <option value="0">2022</option>
                 </select>
                 <h1>Qual desses animes tem mais episódios?</h1>
                 <select id="sel_anime">
                     <option value="0">- escolha um anime -</option>
-                    <option value="0">One Piece</option>
                     <option value="1">Sazae-san</option>
+                    <option value="0">One Piece</option>
                     <option value="0">Doraemon</option>
                     <option value="0">Dragon Ball</option>
                     <option value="0">Detetive Connan</option>
@@ -59,23 +59,23 @@
                     <option value="0">Sapporo</option>
                     <option value="1">Tokyo</option>
                 </select>
-                <h1></h1>
-                <select id="">
+                <h1>Na série/dorama Alice in Borderland, em qual bairro Alice estava no começo?</h1>
+                <select id="sel_dorama">
                     <option value="0">- escolha um ano -</option>
-                    <option value="1">1998</option>
-                    <option value="0">2002</option>
-                    <option value="0">2006</option>
-                    <option value="0">2010</option>
-                    <option value="0">2022</option>
+                    <option value="0">Tokyo</option>
+                    <option value="0">Akihabara</option>
+                    <option value="0">Ikebukuro</option>
+                    <option value="1">Shibuya</option>
+                    <option value="0">Yokohama</option>
                 </select>
-                <h1>Em que ano foi a primeira Copa do Mundo que o Japão Participou?</h1>
-                <select id="">
-                    <option value="0">- escolha um ano -</option>
-                    <option value="1">1998</option>
-                    <option value="0">2002</option>
-                    <option value="0">2006</option>
-                    <option value="0">2010</option>
-                    <option value="0">2022</option>
+                <h1>De qual estado o Matsuri Daiko é?</h1>
+                <select id="sel_taiko">
+                    <option value="0">- escolha uma cidade -</option>
+                    <option value="0">Tokyo</option>
+                    <option value="1">Okinawa</option>
+                    <option value="0">Sapporo</option>
+                    <option value="0">Hiroshima</option>
+                    <option value="0">Kyoto</option>
                 </select><br>
                 <button onclick="finalizar()">Finalizar</button>
             </div>
@@ -120,6 +120,15 @@
         div_resultado.innerHTML += `<h1>${perguntas[i]}</h1><br>`;
     }*/
 
-    
+    var pontos = 0;
+
+    function finalizar(){
+
+        var copa = sel_copa.value
+        var anime = sel_anime.value
+        var capital = sel_capital.value
+        var dorama = sel_dorama.value
+        var taiko = sel_taiko.value
+    }
 
 </script>

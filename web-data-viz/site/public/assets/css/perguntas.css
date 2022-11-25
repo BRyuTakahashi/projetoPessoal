@@ -1,10 +1,10 @@
-.conteudo .container{
+/*.conteudo .container{
 
     display: flex;
     justify-content: center;
-    /* margin-bottom: 100px; */
-    /* margin-left: 200px; */
-}
+    margin-bottom: 100px;
+    margin-left: 200px;
+}*/
 
 .conteudo .container h1{
     text-align: center;
