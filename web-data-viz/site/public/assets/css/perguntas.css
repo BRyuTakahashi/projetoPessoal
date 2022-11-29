@@ -7,10 +7,10 @@
 }*/
 
 .conteudo .container h1{
-    text-align: center;
+    /* text-align: center; */
     font-size: 1.6vw;
     font-weight: normal;
-    /* margin-bottom: 3px; */
+    margin-bottom: 3px;
     
 }
 
@@ -22,7 +22,7 @@
     color: black;
     background-color: #FFFFFF;
     border-radius: 5px;
-    margin-bottom: 25px;
+    margin-bottom: 7%;
     
 }
 

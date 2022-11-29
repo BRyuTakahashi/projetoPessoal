@@ -28,8 +28,8 @@
     </header>
 
     <div class="conteudo">
-        <div class="container">
-            <div class="main">
+        <div class="container" >
+            <div id="div_conteudo">
 
                 <!-- <div id="div_resultado"></div> -->
                 <h1>Em que ano foi a primeira Copa do Mundo que o Japão Participou?</h1>
@@ -68,7 +68,7 @@
                     <option value="1">Shibuya</option>
                     <option value="0">Yokohama</option>
                 </select>
-                <h1>De qual estado o Matsuri Daiko é?</h1>
+                <h1>De qual cidade o Matsuri Daiko é?</h1>
                 <select id="sel_taiko">
                     <option value="0">- escolha uma cidade -</option>
                     <option value="0">Tokyo</option>
@@ -121,6 +121,7 @@
     }*/
 
     var pontos = 0;
+    var frase = '';
 
     function finalizar(){
 
@@ -129,6 +130,41 @@
         var capital = sel_capital.value
         var dorama = sel_dorama.value
         var taiko = sel_taiko.value
-    }
 
+        if(copa == 1){
+            pontos++;
+        }
+
+        if(anime == 1){
+            pontos++;
+        }
+
+        if(capital == 1){
+            pontos++;
+        }
+
+        if(dorama == 1){
+            pontos++;
+        }
+
+        if(taiko == 1){
+            pontos++;
+        }
+
+
+        if(pontos == 5){
+            frase = `Parabéns, você tem a sabedoria de um Buda`
+        } else if(pontos == 4){
+            frase = ``
+        }
+
+        div_conteudo.innerHTML = `
+            <div>
+                <h2>Sua pontuação foi de:</h2>
+                <h1>${pontos}/5</h1>
+                ${frase}
+            </div>
+        `;
+
+    }
 </script>
