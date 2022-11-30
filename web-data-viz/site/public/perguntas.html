@@ -35,47 +35,47 @@
                 <h1>Em que ano foi a primeira Copa do Mundo que o Japão Participou?</h1>
                 <select id="sel_copa">
                     <option value="0">- escolha um ano -</option>
-                    <option value="0">1990</option>
-                    <option value="0">1994</option>
-                    <option value="1">1998</option>
-                    <option value="0">2002</option>
-                    <option value="0">2006</option>
+                    <option value="1990">1990</option>
+                    <option value="1994">1994</option>
+                    <option value="1998">1998</option>
+                    <option value="2002">2002</option>
+                    <option value="2006">2006</option>
                 </select>
                 <h1>Qual desses animes tem mais episódios?</h1>
                 <select id="sel_anime">
                     <option value="0">- escolha um anime -</option>
-                    <option value="1">Sazae-san</option>
-                    <option value="0">One Piece</option>
-                    <option value="0">Doraemon</option>
-                    <option value="0">Dragon Ball</option>
-                    <option value="0">Detetive Connan</option>
+                    <option value="Sazae-san">Sazae-san</option>
+                    <option value="One Piece">One Piece</option>
+                    <option value="Doraemon">Doraemon</option>
+                    <option value="Dragon Ball">Dragon Ball</option>
+                    <option value="Detetive Connan">Detetive Connan</option>
                 </select>
                 <h1>Qual é a capital do Japão?</h1>
                 <select id="sel_capital">
                     <option value="0">- escolha uma cidade -</option>
-                    <option value="0">Hiroshima</option>
-                    <option value="0">Kyoto</option>
-                    <option value="0">Okinawa</option>
-                    <option value="0">Sapporo</option>
-                    <option value="1">Tokyo</option>
+                    <option value="Hiroshima">Hiroshima</option>
+                    <option value="Kyoto">Kyoto</option>
+                    <option value="Okinawa">Okinawa</option>
+                    <option value="Sapporo">Sapporo</option>
+                    <option value="Tokyo">Tokyo</option>
                 </select>
                 <h1>Na série/dorama Alice in Borderland, em qual bairro Alice estava no começo?</h1>
                 <select id="sel_dorama">
                     <option value="0">- escolha um ano -</option>
-                    <option value="0">Tokyo</option>
-                    <option value="0">Akihabara</option>
-                    <option value="0">Ikebukuro</option>
-                    <option value="1">Shibuya</option>
-                    <option value="0">Yokohama</option>
+                    <option value="Shinjuku">Shinjuku</option>
+                    <option value="Akihabara">Akihabara</option>
+                    <option value="Ikebukuro">Ikebukuro</option>
+                    <option value="Shibuya">Shibuya</option>
+                    <option value="Yokohama">Yokohama</option>
                 </select>
                 <h1>De qual cidade o Matsuri Daiko é?</h1>
                 <select id="sel_taiko">
                     <option value="0">- escolha uma cidade -</option>
-                    <option value="0">Tokyo</option>
-                    <option value="1">Okinawa</option>
-                    <option value="0">Sapporo</option>
-                    <option value="0">Hiroshima</option>
-                    <option value="0">Kyoto</option>
+                    <option value="Tokyo">Tokyo</option>
+                    <option value="Okinawa">Okinawa</option>
+                    <option value="Sapporo">Sapporo</option>
+                    <option value="Hiroshima">Hiroshima</option>
+                    <option value="Kyoto">Kyoto</option>
                 </select><br>
                 <button onclick="finalizar()">Finalizar</button>
             </div>
@@ -121,50 +121,74 @@
     }*/
 
     var pontos = 0;
+    var respostas_certas = ['1998', 'Sazae-san', 'Tokyo', 'Shibuya', 'Okinawa']
+    // var pergunta = 0
     var frase = '';
-
+    
     function finalizar(){
-
+        
+        var respostas = [];
         var copa = sel_copa.value
         var anime = sel_anime.value
         var capital = sel_capital.value
         var dorama = sel_dorama.value
         var taiko = sel_taiko.value
+        var cor = '';
 
-        if(copa == 1){
-            pontos++;
+        respostas.push(copa)
+        respostas.push(anime)
+        respostas.push(capital)
+        respostas.push(dorama)
+        respostas.push(taiko)
+
+        if(copa == 0 || anime == 0 || capital == 0 || dorama == 0 || taiko == 0){
+
+            alert(`Escolha todas as respotas corretamente!`)
+        } else{
+
+
+            div_conteudo.innerHTML = `<h2 style="">Sua respostas:</h2>`
+    
+            for(var i = 0; i < 5; i++){
+    
+                if(respostas[i]  == respostas_certas[i]){
+                    cor = '#043800'
+                    pontos++
+                } else {
+                    cor = 'red'
+                }
+                div_conteudo.innerHTML += `<span style="color: ${cor}; font-size: 16px; margin-right: 16px;">${respostas[i]}</span> `
+            }
+    
+    
+            if(pontos == 5){
+                frase = `Parabéns, você tem a sabedoria do Lelouch de Code Geas`
+                cor = '#043800'
+            } else if(pontos == 4){
+                frase = `Foi quase lá, sua sabedoria é a mesma do Tsukishima de Haikyuu`
+                cor = '#043800'
+            } else if(pontos == 3){
+                frase = `Seu conhecimento é equivalente ao do Ayanokoji (ou será que não)`
+                cor = 'orange'
+            } else if(pontos == 2){
+                frase = `Seu conhecimento é similar ao Taiju de Dr. Stone`
+                cor = 'red'
+            } else if(pontos == 1){
+                frase = `Você tem a inteligencia do Inosuke`
+                cor = 'red'
+            } else{
+                frase = `É, ai você se superou...`
+                cor = 'black'
+            }
+    
+            div_conteudo.innerHTML += `
+                <div style="margin-top: 30px;">
+                    <h1 style="font-weight: bold;"> Sua pontuação foi de: <span style="color: ${cor};">${pontos}</span>/5 </h1>
+                    <span style="color: ${cor}; font-size: 18px;">${frase}</span>
+                </div>
+            `;
+    
         }
-
-        if(anime == 1){
-            pontos++;
-        }
-
-        if(capital == 1){
-            pontos++;
-        }
-
-        if(dorama == 1){
-            pontos++;
-        }
-
-        if(taiko == 1){
-            pontos++;
-        }
-
-
-        if(pontos == 5){
-            frase = `Parabéns, você tem a sabedoria de um Buda`
-        } else if(pontos == 4){
-            frase = ``
-        }
-
-        div_conteudo.innerHTML = `
-            <div>
-                <h2>Sua pontuação foi de:</h2>
-                <h1>${pontos}/5</h1>
-                ${frase}
-            </div>
-        `;
-
     }
+
 </script>
