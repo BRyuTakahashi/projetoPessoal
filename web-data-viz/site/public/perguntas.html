@@ -121,9 +121,9 @@
     }*/
 
     var pontos = 0;
-    var respostas_certas = ['1998', 'Sazae-san', 'Tokyo', 'Shibuya', 'Okinawa']
-    // var pergunta = 0
+    var respostas_certas = ['1998', 'Sazae-san', 'Tokyo', 'Shibuya', 'Okinawa'];
     var frase = '';
+    var usuarioVar =  sessionStorage.ID_USUARIO;
     
     function finalizar(){
         
@@ -163,10 +163,10 @@
     
             if(pontos == 5){
                 frase = `Parabéns, você tem a sabedoria do Lelouch de Code Geas`
-                cor = '#043800'
+                cor = '#208A00'
             } else if(pontos == 4){
                 frase = `Foi quase lá, sua sabedoria é a mesma do Tsukishima de Haikyuu`
-                cor = '#043800'
+                cor = '#208A00'
             } else if(pontos == 3){
                 frase = `Seu conhecimento é equivalente ao do Ayanokoji (ou será que não)`
                 cor = 'orange'
@@ -184,11 +184,60 @@
             div_conteudo.innerHTML += `
                 <div style="margin-top: 30px;">
                     <h1 style="font-weight: bold;"> Sua pontuação foi de: <span style="color: ${cor};">${pontos}</span>/5 </h1>
-                    <span style="color: ${cor}; font-size: 18px;">${frase}</span>
+                    <span style="color: ${cor}; font-size: 18px;">${frase}</span><br>
+                    <button onclick="tentar()">Tentar Novamente</button>
+                    <button style="width: 140px;" onclick="voltar()">Voltar para o menu</button>
                 </div>
             `;
+
+            fetch("/usuarios/pontuar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    // crie um atributo que recebe o valor recuperado aqui
+                    // Agora vá para o arquivo routes/usuario.js
+                    pontosServer: pontos,
+                    usuarioServer: usuarioVar,
+                })
+            }).then(function (resposta) {
+
+                console.log("resposta: ", resposta);
+
+                if (resposta.ok) {
+                    // cardErro.style.display = "block";
+
+                    // mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+                    
+                    limparFormulario();
+                    finalizarAguardar();
+                } else {
+                    throw ("Houve um erro ao tentar realizar o cadastro!");
+                }
+            }).catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+                finalizarAguardar();
+            });
+
+            return false;
+            }
+
+            function sumirMensagem() {
+                cardErro.style.display = "none"
+            }
     
-        }
+    
+    }
+
+    function voltar(){
+
+        window.location = "./index.html";
+    }
+
+    function tentar(){
+
+        window.location = "./quiz.html";
     }
 
 </script>

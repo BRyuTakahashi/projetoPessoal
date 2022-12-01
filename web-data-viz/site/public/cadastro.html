@@ -95,6 +95,7 @@
     var grupoVar = sel_grupo.value;
     var senhaVar = ipt_senha.value;
     var senha2Var = ipt_senha2.value;
+    console.log('NO CADASTRO: ', nomeVar)
 
     if (nomeVar == "" || apelidoVar == "" || emailVar == "" || senhaVar == "" || senha2Var == "") {
         cardErro.style.display = "block"
@@ -146,10 +147,10 @@
     });
 
     return false;
-}
+    }
 
-function sumirMensagem() {
-    cardErro.style.display = "none"
-}
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
 
 </script>
