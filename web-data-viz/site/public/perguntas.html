@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/perguntas.css">
+    <link rel="shortcut icon" href="./assets/img/naruko_icon.png" type="image/x-icon">
+    <title>Yosakoi Brasil</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <h1><a href="index.html"><img src="./assets/img/yosakoiBrasil_logo.png" alt="Logo Yosakoi Brasil" class="logo"></a></h1>
+            
+            <!-- <ul>
+                <li><a href="index.html">Home<br><div class="bar"></div></a></li>
+                <li><a href="grupos.html">Grupos<br><div class="bar"></div></a></li>
+                <li><a href="eventos.html">Eventos<br><div class="bar"></div></a></li>
+                <li><a href="quiz.html">Quiz<br><div class="bar"></div></a></li>
+                <li>|</li>
+                <li><a href="login.html"><img src="./assets/img/login_icon.png" alt="icone_login"><br><div class="bar"></div></a></li>
+            </ul> -->
+        </div>
+    </header>
+
+    <div class="conteudo">
+        <div class="container" >
+            <div id="div_conteudo">
+
+                <!-- <div id="div_resultado"></div> -->
+                <h1>Em que ano foi a primeira Copa do Mundo que o Japão Participou?</h1>
+                <select id="sel_copa">
+                    <option value="0">- escolha um ano -</option>
+                    <option value="1990">1990</option>
+                    <option value="1994">1994</option>
+                    <option value="1998">1998</option>
+                    <option value="2002">2002</option>
+                    <option value="2006">2006</option>
+                </select>
+                <h1>Qual desses animes tem mais episódios?</h1>
+                <select id="sel_anime">
+                    <option value="0">- escolha um anime -</option>
+                    <option value="Sazae-san">Sazae-san</option>
+                    <option value="One Piece">One Piece</option>
+                    <option value="Doraemon">Doraemon</option>
+                    <option value="Dragon Ball">Dragon Ball</option>
+                    <option value="Detetive Connan">Detetive Connan</option>
+                </select>
+                <h1>Qual é a capital do Japão?</h1>
+                <select id="sel_capital">
+                    <option value="0">- escolha uma cidade -</option>
+                    <option value="Hiroshima">Hiroshima</option>
+                    <option value="Kyoto">Kyoto</option>
+                    <option value="Okinawa">Okinawa</option>
+                    <option value="Sapporo">Sapporo</option>
+                    <option value="Tokyo">Tokyo</option>
+                </select>
+                <h1>Na série/dorama Alice in Borderland, em qual bairro Alice estava no começo?</h1>
+                <select id="sel_dorama">
+                    <option value="0">- escolha um ano -</option>
+                    <option value="Shinjuku">Shinjuku</option>
+                    <option value="Akihabara">Akihabara</option>
+                    <option value="Ikebukuro">Ikebukuro</option>
+                    <option value="Shibuya">Shibuya</option>
+                    <option value="Yokohama">Yokohama</option>
+                </select>
+                <h1>De qual cidade o Matsuri Daiko é?</h1>
+                <select id="sel_taiko">
+                    <option value="0">- escolha uma cidade -</option>
+                    <option value="Tokyo">Tokyo</option>
+                    <option value="Okinawa">Okinawa</option>
+                    <option value="Sapporo">Sapporo</option>
+                    <option value="Hiroshima">Hiroshima</option>
+                    <option value="Kyoto">Kyoto</option>
+                </select><br>
+                <button onclick="finalizar()">Finalizar</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>Feito com amor por um aluno SPTech &copy;2022</p>
+        </div>
+    </footer>
+</body>
+
+</html>
+
+<script>
+
+    /* var sequencia = [];
+
+    var perguntas ={
+
+        0 : ["Qual o nome do filho do Naruto"],
+        1 : ["Quais as cores da bandeira japonesa"],
+        2 : ["Qual o nome da flor mais famosa da primavera?"],
+        3 : ["Quais cidades sofreram ataques nucleares durante a segunda Guerra Mundial"],
+        4 : ["Super Onze"]
+    }
+
+    for(var i = 0; i < 5; i++){
+        var gerador = parseInt(Math.random() * 5);
+            
+        while(true){
+            var gerador2 = parseInt(Math.random() * 5);
+
+            if(sequencia.indexOf(gerador2) < 0){
+
+                sequencia.push(gerador2);
+                break;
+            }
+        }
+        // div_resultado.innerHTML += `<h1>${perguntas.sequencia[2]}</h1><br>`;
+        div_resultado.innerHTML += `<h1>${perguntas[i]}</h1><br>`;
+    }*/
+
+    var pontos = 0;
+    var respostas_certas = ['1998', 'Sazae-san', 'Tokyo', 'Shibuya', 'Okinawa'];
+    var frase = '';
+    var usuarioVar =  sessionStorage.ID_USUARIO;
+    
+    function finalizar(){
+        
+        var respostas = [];
+        var copa = sel_copa.value
+        var anime = sel_anime.value
+        var capital = sel_capital.value
+        var dorama = sel_dorama.value
+        var taiko = sel_taiko.value
+        var cor = '';
+
+        respostas.push(copa)
+        respostas.push(anime)
+        respostas.push(capital)
+        respostas.push(dorama)
+        respostas.push(taiko)
+
+        if(copa == 0 || anime == 0 || capital == 0 || dorama == 0 || taiko == 0){
+
+            alert(`Escolha todas as respotas corretamente!`)
+        } else{
+
+
+            div_conteudo.innerHTML = `<h2 style="">Sua respostas:</h2>`
+    
+            for(var i = 0; i < 5; i++){
+    
+                if(respostas[i]  == respostas_certas[i]){
+                    cor = '#043800'
+                    pontos++
+                } else {
+                    cor = 'red'
+                }
+                div_conteudo.innerHTML += `<span style="color: ${cor}; font-size: 16px; margin-right: 16px;">${respostas[i]}</span> `
+            }
+    
+    
+            if(pontos == 5){
+                frase = `Parabéns, você tem a sabedoria do Lelouch de Code Geas`
+                cor = '#208A00'
+            } else if(pontos == 4){
+                frase = `Foi quase lá, sua sabedoria é a mesma do Tsukishima de Haikyuu`
+                cor = '#208A00'
+            } else if(pontos == 3){
+                frase = `Seu conhecimento é equivalente ao do Ayanokoji (ou será que não)`
+                cor = 'orange'
+            } else if(pontos == 2){
+                frase = `Seu conhecimento é similar ao Taiju de Dr. Stone`
+                cor = 'red'
+            } else if(pontos == 1){
+                frase = `Você tem a inteligencia do Inosuke`
+                cor = 'red'
+            } else{
+                frase = `É, ai você se superou...`
+                cor = 'black'
+            }
+    
+            div_conteudo.innerHTML += `
+                <div style="margin-top: 30px;">
+                    <h1 style="font-weight: bold;"> Sua pontuação foi de: <span style="color: ${cor};">${pontos}</span>/5 </h1>
+                    <span style="color: ${cor}; font-size: 18px;">${frase}</span><br>
+                    <button onclick="tentar()">Tentar Novamente</button>
+                    <button style="width: 140px;" onclick="voltar()">Voltar para o menu</button>
+                </div>
+            `;
+
+            fetch("/usuarios/pontuar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    // crie um atributo que recebe o valor recuperado aqui
+                    // Agora vá para o arquivo routes/usuario.js
+                    pontosServer: pontos,
+                    usuarioServer: usuarioVar,
+                })
+            }).then(function (resposta) {
+
+                console.log("resposta: ", resposta);
+
+                if (resposta.ok) {
+                    // cardErro.style.display = "block";
+
+                    // mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+                    
+                    limparFormulario();
+                    finalizarAguardar();
+                } else {
+                    throw ("Houve um erro ao tentar realizar o cadastro!");
+                }
+            }).catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+                finalizarAguardar();
+            });
+
+            return false;
+            }
+
+            function sumirMensagem() {
+                cardErro.style.display = "none"
+            }
+    
+    
+    }
+
+    function voltar(){
+
+        window.location = "./index.html";
+    }
+
+    function tentar(){
+
+        window.location = "./quiz.html";
+    }
+
+</script>

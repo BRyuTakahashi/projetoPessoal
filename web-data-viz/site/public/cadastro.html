@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yosakoi Brasil</title>
+    <!-- <link rel="stylesheet" href="./assets/css/style.css"> -->
+    <link rel="stylesheet" href="./assets/css/cadastro.css">
+    <link rel="shortcut icon" href="./assets/img/naruko_icon.png" type="image/x-icon">
+</head>
+
+<body>
+
+    <header>
+
+        <h1><a href="index.html"><img src="./assets/img/YosakoiBrasil_logoBranco.png" alt="Logo Yosakoi Brasil" class="logo"></a></h1>
+    </header>
+
+    <div class="banner">
+
+        <div class="container">
+
+            <div class="caixa-formulario">
+
+                <h2>Faça o seu cadastro e teste seus conhecimentos sobre a cultura japonesa</h2>
+
+                    <div class="conteudo">
+
+                        <div class="campo">
+                            
+                            <label for="nome">Nome:</label>
+                            <input type="text" id="ipt_nome" placeholder="Nome">
+                        </div>
+                        
+                        <div class="campo">
+                            
+                            <label for="Nome">Apelido:</label>
+                            <input type="text" id="ipt_apelido" placeholder="apelido">
+                        </div>
+                        
+                        <div class="campo">
+                            
+                            <label for="email">Email:</label>
+                            <input type="email" id="ipt_email" placeholder="email@email.com">
+                        </div>
+                    </div>
+                        
+                    <div class="conteudo">
+                        
+                        <div class="campo">
+                            
+                            <label for="grupo">Grupo:</label>
+                            <select id="sel_grupo">
+                                <option value="0">Nenhum</option>
+                                <option value="1">Ishin</option>
+                                <option value="2">Kitsume</option>
+                                <option value="3">Shinsei</option>
+                            </select>
+                        </div>
+
+                        <div class="campo">
+                            
+                            <label for="password">Senha:</label>
+                            <input type="password" id="ipt_senha" placeholder="*********">
+                        </div>
+                        
+                        <div class="campo">
+                            
+                            <label for="password">Confirmar Senha:</label>
+                            <input type="password" id="ipt_senha2" placeholder="*********">
+                        </div>
+                    </div>
+                <a href="login.html">Já é cadastrado?</a>
+                
+                <button onclick="cadastrar()">Cadastrar</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    
+    function cadastrar() {
+    // aguardar();
+
+    //Recupere o valor da nova input pelo nome do id
+    // Agora vá para o método fetch logo abaixo
+    var nomeVar = ipt_nome.value;
+    var apelidoVar = ipt_apelido.value;
+    var emailVar = ipt_email.value;
+    var grupoVar = sel_grupo.value;
+    var senhaVar = ipt_senha.value;
+    var senha2Var = ipt_senha2.value;
+    console.log('NO CADASTRO: ', nomeVar)
+
+    if (nomeVar == "" || apelidoVar == "" || emailVar == "" || senhaVar == "" || senha2Var == "") {
+        cardErro.style.display = "block"
+        mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+
+        finalizarAguardar();
+        return false;
+    }
+    else {
+        setInterval(sumirMensagem, 5000)
+    }
+
+    // Enviando o valor da nova input
+    fetch("/usuarios/cadastrar", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            // crie um atributo que recebe o valor recuperado aqui
+            // Agora vá para o arquivo routes/usuario.js
+            nomeServer: nomeVar,
+            apelidoServer: apelidoVar,
+            emailServer: emailVar,
+            grupoServer: grupoVar,
+            senhaServer: senhaVar
+        })
+    }).then(function (resposta) {
+
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+            // cardErro.style.display = "block";
+
+            // mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+            setTimeout(() => {
+                window.location = "./login.html";
+            }, "2000")
+            
+            limparFormulario();
+            finalizarAguardar();
+        } else {
+            throw ("Houve um erro ao tentar realizar o cadastro!");
+        }
+    }).catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+        finalizarAguardar();
+    });
+
+    return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+
+</script>
